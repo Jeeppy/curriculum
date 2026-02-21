@@ -1,0 +1,244 @@
+%% CV deux colonnes — compilez avec XeLaTeX
+%% Colonne gauche : infos, compétences, centres d'intérêt
+%% Colonne droite  : expériences, diplômes
+
+\documentclass[a4paper,10pt]{article}
+
+%% ── Packages ───────────────────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{fontawesome5}       % icônes
+\usepackage{paracol}            % deux colonnes indépendantes
+\usepackage{eso-pic}            % fond pleine page colonne gauche
+\usepackage{array}              % colonnes avancées dans tabular
+\usepackage{enumitem}           % listes sans puce
+\usepackage{titlesec}           % titres de sections
+\usepackage[hidelinks]{hyperref} % liens cliquables sans bordure
+\usepackage{microtype}
+\usepackage{lmodern}            % police propre sans XeLaTeX
+
+%% ── Mise en page ───────────────────────────────────────────────────────────
+\geometry{top=0cm, bottom=0cm, left=0cm, right=1cm}
+\pagestyle{empty}               % pas de numéro de page
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+%% ── Couleurs ───────────────────────────────────────────────────────────────
+%% Fond pleine hauteur pour la colonne gauche (indépendant du contenu)
+\AddToShipoutPictureBG{%
+  \color{sidecolor}%
+  \AtPageLowerLeft{\rule{0.27\textwidth}{\paperheight}}%
+}
+
+\definecolor{sidecolor}{HTML}{2C3E50}   % bleu foncé — fond colonne gauche
+\definecolor{accent}{HTML}{2980B9}      % bleu — titres colonne droite
+\definecolor{lightgray}{HTML}{F0F0F0}
+\definecolor{textside}{HTML}{ECF0F1}    % texte colonne gauche (clair)
+
+%% ── Mise en forme sections colonne droite ──────────────────────────────────
+\newcommand{\rsection}[1]{%
+  \vspace{4pt}%
+  {\color{accent}\large\bfseries #1}%
+  \par\vspace{-4pt}%
+  {\color{accent}\rule{\linewidth}{1pt}}%
+  \vspace{2pt}%
+}
+
+%% ── Mise en forme sections colonne gauche ──────────────────────────────────
+\newcommand{\lsection}[1]{%
+  \vspace{18pt}%
+  {\color{white}\bfseries\uppercase{#1}}%
+  \par\vspace{-4pt}%
+  {\color{white!50!sidecolor}\rule{\linewidth}{0.5pt}}%
+  \vspace{4pt}%
+}
+
+%% ── Entrée diplôme (inline compact) ───────────────────────────────────────
+\newcommand{\cvdiploma}[3]{%
+  % #1 = année   #2 = diplôme (gras)   #3 = école
+  \vspace{2pt}
+  {\small\color{gray}#1}\qquad{\small\bfseries #2}%
+  \def\school{#3}\ifx\school\empty\else{ \small\itshape — #3}\fi\par
+  \vspace{1pt}%
+}
+
+%% ── Entrée expérience / diplôme ────────────────────────────────────────────
+\newcommand{\cventry}[4]{%
+  % #1 = période   #2 = titre   #3 = lieu/entreprise   #4 = description
+  \vspace{3pt}\noindent
+  \makebox[1.8cm][l]{\small\color{gray}#1}\hspace{6pt}%
+  \begin{minipage}[t]{\dimexpr\linewidth-2.2cm}
+    {\bfseries #2}, \small\itshape #3\\[2pt]
+    \small\upshape #4
+  \end{minipage}
+  \vspace{3pt}%
+}
+
+%% ── Catégorie de compétences ───────────────────────────────────────────────
+\newcommand{\skillcategory}[2]{%
+  % #1 = catégorie   #2 = items séparés par \\ dans une itemize
+  \vspace{5pt}
+  {\color{accent}\small\bfseries #1}\par\vspace{1pt}
+  \begin{itemize}[leftmargin=10pt, itemsep=0pt, topsep=0pt, parsep=0pt, label={\color{accent}\tiny\textbullet}]
+    \color{textside}\small #2
+  \end{itemize}
+}
+
+%% ── Intérêt ────────────────────────────────────────────────────────────────
+\newcommand{\interest}[2]{%
+  % #1 = icône fontawesome   #2 = libellé
+  {\color{white} #1\enspace\small #2}\par\vspace{3pt}%
+}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+\begin{document}
+
+%% Ratio colonnes : 0.33 gauche / 0.67 droite
+\setlength{\columnsep}{0pt}
+\columnratio{0.27}
+
+\begin{paracol}{2}
+
+%% ──────────────────────────────────────────────────────────────────────────
+%%  COLONNE GAUCHE
+%% ──────────────────────────────────────────────────────────────────────────
+\begin{leftcolumn}
+\hspace*{10pt}%
+\begin{minipage}[t]{\dimexpr\linewidth-20pt}
+
+%% ── Photo + Nom ────────────────────────────────────────────────────────────
+\vspace*{0pt}
+\begin{center}
+  %% Décommentez les deux lignes suivantes si vous avez une photo
+  %% \includegraphics[width=2.5cm, clip, keepaspectratio]{photo.jpg}\\[6pt]
+  {\color{white}\large\bfseries Jean-Patrick Debaëne}\\[4pt]
+  {\color{white!70!sidecolor}\large Développeur backend}
+\end{center}
+
+%% ── Informations ────────────────────────────────────────────────────────────
+\lsection{Informations}
+
+{\color{textside}
+  \faMapMarker*\ \ Lille, France \par\vspace{3pt}
+  \faPhone\ \ 06 63 39 80 26 \par\vspace{3pt}
+  \faEnvelope\ \ \href{mailto:jp.debaene@gmail.com}{\color{textside}jp.debaene@gmail.com} \par\vspace{3pt}
+  \faLinkedinIn\ \href{https://www.linkedin.com/in/jp-debaene}{\color{textside}linkedin.com/in/jp-debaene} \par\vspace{3pt}
+  \faGithub\ \ \href{https://github.com/jeeppy}{\color{textside}github.com/jeeppy}
+}
+
+%% ── Compétences ─────────────────────────────────────────────────────────────
+\lsection{Compétences}
+
+\skillcategory{Langages}{\item Python \item Ruby \item JavaScript, jQuery \item C\# \item HTML, CSS}
+\skillcategory{Frameworks}{\item Ruby on Rails \item Django \item Bootstrap \item GraphQL \item Sidekiq}
+\skillcategory{Bases de données}{\item PostgreSQL \item DB2}
+\skillcategory{DevOps}{\item Docker, Kubernetes \item AWS (Lambda, Textract) \item GitHub Actions \item GitLab CI/CD}
+\skillcategory{Outils}{\item Git \item Linux \item VS Code}
+
+\vspace{4pt}
+\skillcategory{Langues}{\item Français (natif) \item Anglais (Technique)}
+
+%% ── Centres d'intérêt ───────────────────────────────────────────────────────
+\lsection{Centres d'intérêt}
+
+\interest{\faSwimmer}{Triathlon}
+\interest{\faRunning}{Course à pied}
+\interest{\faBook}{Science-fiction}
+\interest{\faHome}{Domotique}
+
+\vspace{\fill}
+\end{minipage}
+\end{leftcolumn}
+
+%% ──────────────────────────────────────────────────────────────────────────
+%%  COLONNE DROITE
+%% ──────────────────────────────────────────────────────────────────────────
+\begin{rightcolumn}
+
+\hspace*{7pt}%
+\vspace*{0pt}
+\begin{minipage}[t]{\dimexpr\linewidth-19pt}
+
+%% ── Accroche ────────────────────────────────────────────────────────────────
+\vspace*{10pt}
+{\small Développeur backend polyvalent avec 15 ans d'expérience dans la conception d'APIs et d'applications métier. À l'aise sur des stacks variées (Python, Ruby on Rails, C\#), autonome et rigoureux, avec une appétence pour les architectures propres.}
+
+\vspace{6pt}
+
+%% ── Expériences ─────────────────────────────────────────────────────────────
+\rsection{\faBuilding\enspace Expériences professionnelles}
+
+\cventry{2023 -- 2026}{Développeur fullstack}{Octopus Lab (liquidation judiciaire), La Madeleine}
+  {Développement de solutions logicielles pour l'amélioration de la performance énergétique des bâtiments :
+  \begin{itemize}[leftmargin=10pt, itemsep=0pt, topsep=2pt, parsep=0pt, label={\tiny\textbullet}]
+    \item Développement du moteur de simulation thermique
+    \item Conception d'un modèle énergétique PID en Python (Poetry, ruff, mypy, pytest) déployé via pipeline GitLab CI/CD jusqu'au Package Registry
+    \item Mise en place de prédictions de température pour tous les bâtiments
+    \item Intégration de capteurs IoT multi-protocoles (Ethera, Nexelec RISE/AIR/SIGN, Bluesky, Navixis) avec décodage de trames brutes
+    \item Développement de fonctionnalités métier : notifications par mail, gestion des droits, déclencheurs d'occupation (Mainti4)
+    \item Intégration de données météo et QAE (Copernicus)
+    \item Formation et encadrement de profils scientifiques sur Python (POO, bonnes pratiques)
+    \item Migration des projets vers Ruby 3.2 et Rails 7.2
+  \end{itemize}
+  \textit{Stack :} Ruby on Rails, Python, jQuery, PostgreSQL, Docker, Kubernetes, GitLab CI/CD
+  }
+
+\cventry{2022 -- 2023}{Développeur backend}{Cautioneo, Lille}
+  {Développement de fonctionnalités backend en Ruby on Rails dans le domaine de l'assurance loyers impayés :
+  \begin{itemize}[leftmargin=10pt, itemsep=0pt, topsep=2pt, parsep=0pt, label={\tiny\textbullet}]
+    \item Conception et exposition d'une API GraphQL pour le parcours d'adhésion en ligne
+    \item Intégration de partenaires externes (HubSpot, Stripe) via API REST
+    \item Développement d'un module d'import automatisé d'annonces immobilières en Node.js (AWS Lambda serverless)
+    \item Mise en place du tracking des conversions publicitaires (Facebook Ads, Google Ads)
+    \item Extraction automatique de données depuis des pièces justificatives via AWS Textract
+    \item Exports de données SQL pour l'alimentation de reportings métier
+  \end{itemize}
+  \textit{Stack :} Ruby on Rails, GraphQL, PostgreSQL, AWS Textract, Docker, GitHub Actions, GitLab CI/CD, Node.js
+  }
+
+\cventry{2010 -- 2022}{Développeur backend}{Cim, Villeneuve d'Ascq}
+  {Conception et développement de solutions métier critiques dans le domaine de l'assurance de personnes :
+  \begin{itemize}[leftmargin=10pt, itemsep=0pt, topsep=2pt, parsep=0pt, label={\tiny\textbullet}]
+    \item Développement sur le progiciel métier : module de cotisation et échanges EDI \textit{(PowerBuilder)}
+    \item Web-services REST de calcul de prise en charge et devis (Viamedis, Almerys) et de génération de cartes tiers-payant \textit{(C\#)}
+    \item API REST de gestion de la DSN et exports de données SQL pour reportings métier \textit{(Python)}
+  \end{itemize}
+  \textit{Stack :} Python, Django, Django REST Framework, C\#, PostgreSQL, DB2, GitLab CI/CD
+  }
+
+\cventry{2008 -- 2009}{Développeur WinDev}{Gid, Douai}{Développement de plusieurs applications métier sous WinDev : outil de gestion de parc informatique et logiciel de gestion d'agences immobilières.}
+
+\cventry{2007}{Développeur C++}{Sofintec, Amiens}{Conception et développement d'un logiciel éducatif avec contrôle parental en C++ et Qt.}
+
+\cventry{2006}{Développeur web}{Auto-picardie, Amiens}{Conception et développement d'un site vitrine de présentation et de vente de véhicules d'occasion.}
+
+\cventry{2005}{Technicien informatique}{Centre hospitalier, Beauvais}{}
+
+%% ── Formation ───────────────────────────────────────────────────────────────
+\rsection{\faGraduationCap\enspace Formation}
+
+\cvdiploma{2009}{Chargé de projets en systèmes informatiques appliqués}{}
+\cvdiploma{2007}{Diplôme universitaire de technologie d'informatique}{}
+\cvdiploma{2006}{Brevet de technicien supérieur d'informatique de gestion}{}
+\cvdiploma{2004}{Baccalauréat STT informatique de gestion}{}
+
+%% ── Projets ─────────────────────────────────────────────────────────────────
+%% \rsection{\faRocket\enspace Projets notables}
+%% \cventry{2023}
+%%   {ClimateDash}
+%%   {\href{https://github.com/votrepseudo/climatedash}{github.com/votrepseudo/climatedash}}
+%%   {Dashboard open-source de visualisation de données climatiques (Python, Plotly, FastAPI). 200+ étoiles GitHub.}
+
+%% ── Certifications ──────────────────────────────────────────────────────────
+%% \rsection{\faCertificate\enspace Certifications}
+%% \cventry{2023}{AWS Certified Solutions Architect — Associate}{Amazon Web Services}{}
+
+\vspace{\fill}
+\end{minipage}
+\end{rightcolumn}
+
+\end{paracol}
+
+\end{document}
