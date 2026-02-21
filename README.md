@@ -2,9 +2,7 @@
 
 **Développeur backend** — Lille, France
 
-📧 [jp.debaene@gmail.com](mailto:jp.debaene@gmail.com)
-📞 06 63 39 80 26
-🔗 [linkedin.com/in/jp-debaene](https://www.linkedin.com/in/jp-debaene)
+🔗 [linkedin.com/in/jp-debaene](https://www.linkedin.com/in/jp-debaene)<br>
 🐙 [github.com/jeeppy](https://github.com/jeeppy)
 
 ---
@@ -15,7 +13,7 @@ Développeur backend polyvalent avec 15 ans d'expérience dans la conception d'A
 
 ## Expériences professionnelles
 
-### 2023 – 2026 · Développeur fullstack — Octopus Lab (liquidation judiciaire), La Madeleine
+### 2023 – 2026 · Développeur fullstack — Octopus Lab, La Madeleine
 
 Développement de solutions logicielles pour l'amélioration de la performance énergétique des bâtiments :
 
@@ -83,25 +81,25 @@ Conception et développement d'un site vitrine de présentation et de vente de v
 
 ## Formation
 
-| Année | Diplôme |
-|-------|---------|
-| 2009 | Chargé de projets en systèmes informatiques appliqués |
-| 2007 | Diplôme universitaire de technologie d'informatique |
-| 2006 | Brevet de technicien supérieur d'informatique de gestion |
-| 2004 | Baccalauréat STT informatique de gestion |
+| Année | Diplôme                                                  |
+| ----- | -------------------------------------------------------- |
+| 2009  | Chargé de projets en systèmes informatiques appliqués    |
+| 2007  | Diplôme universitaire de technologie d'informatique      |
+| 2006  | Brevet de technicien supérieur d'informatique de gestion |
+| 2004  | Baccalauréat STT informatique de gestion                 |
 
 ---
 
 ## Compétences
 
-| Catégorie | Technologies |
-|-----------|-------------|
-| Langages | Python, Ruby, JavaScript, jQuery, C#, HTML, CSS |
-| Frameworks | Ruby on Rails, Django, Bootstrap, GraphQL, Sidekiq |
-| Bases de données | PostgreSQL, DB2 |
-| DevOps | Docker, Kubernetes, AWS (Lambda, Textract), GitHub Actions, GitLab CI/CD |
-| Outils | Git, Linux, VS Code |
-| Langues | Français (natif), Anglais (Technique) |
+| Catégorie        | Technologies                                                             |
+| ---------------- | ------------------------------------------------------------------------ |
+| Langages         | Python, Ruby, JavaScript, jQuery, C#, HTML, CSS                          |
+| Frameworks       | Ruby on Rails, Django, Bootstrap, GraphQL, Sidekiq                       |
+| Bases de données | PostgreSQL, DB2                                                          |
+| DevOps           | Docker, Kubernetes, AWS (Lambda, Textract), GitHub Actions, GitLab CI/CD |
+| Outils           | Git, Linux, VS Code                                                      |
+| Langues          | Français (natif), Anglais (Technique)                                    |
 
 ---
 
