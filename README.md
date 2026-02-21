@@ -41,7 +41,7 @@ Développement de fonctionnalités backend en Ruby on Rails dans le domaine de l
 - Extraction automatique de données depuis des pièces justificatives via AWS Textract
 - Exports de données SQL pour l'alimentation de reportings métier
 
-**Stack :** Ruby on Rails, GraphQL, PostgreSQL, AWS Textract, Docker, GitHub Actions, GitLab CI/CD, Node.js
+**Stack :** Ruby on Rails, GraphQL, PostgreSQL, AWS Textract, Docker, GitHub Actions, Node.js
 
 ---
 
