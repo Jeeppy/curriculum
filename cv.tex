@@ -20,7 +20,7 @@
 \usepackage{lmodern}            % police propre sans XeLaTeX
 
 %% ── Mise en page ───────────────────────────────────────────────────────────
-\geometry{top=0cm, bottom=0cm, left=0cm, right=1cm}
+\geometry{top=0.5cm, bottom=0.5cm, left=0.4cm, right=0.4cm}
 \pagestyle{empty}               % pas de numéro de page
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
@@ -29,7 +29,7 @@
 %% Fond pleine hauteur pour la colonne gauche (indépendant du contenu)
 \AddToShipoutPictureBG{%
   \color{sidecolor}%
-  \AtPageLowerLeft{\rule{0.27\textwidth}{\paperheight}}%
+  \AtPageLowerLeft{\rule{\dimexpr 0.4cm + 0.27\textwidth}{\paperheight}}%
 }
 
 \definecolor{sidecolor}{HTML}{2C3E50}   % bleu foncé — fond colonne gauche
@@ -109,7 +109,7 @@
 \begin{minipage}[t]{\dimexpr\linewidth-20pt}
 
 %% ── Photo + Nom ────────────────────────────────────────────────────────────
-\vspace*{0pt}
+\vspace*{5pt}
 \begin{center}
   %% Décommentez les deux lignes suivantes si vous avez une photo
   %% \includegraphics[width=2.5cm, clip, keepaspectratio]{photo.jpg}\\[6pt]
@@ -162,7 +162,7 @@
 \begin{minipage}[t]{\dimexpr\linewidth-19pt}
 
 %% ── Accroche ────────────────────────────────────────────────────────────────
-\vspace*{10pt}
+\vspace*{5pt}
 {\small Développeur backend polyvalent avec 15 ans d'expérience dans la conception d'APIs et d'applications métier. À l'aise sur des stacks variées (Python, Ruby on Rails, C\#), autonome et rigoureux, avec une appétence pour les architectures propres.}
 
 \vspace{6pt}
@@ -201,9 +201,9 @@
 \cventry{2010 -- 2022}{Développeur backend}{Cim, Villeneuve d'Ascq}
   {Conception et développement de solutions métier critiques dans le domaine de l'assurance de personnes :
   \begin{itemize}[leftmargin=10pt, itemsep=0pt, topsep=2pt, parsep=0pt, label={\tiny\textbullet}]
-    \item Développement sur le progiciel métier : module de cotisation et échanges EDI \textit{(PowerBuilder)}
     \item Web-services REST de calcul de prise en charge et devis (Viamedis, Almerys) et de génération de cartes tiers-payant \textit{(C\#)}
     \item API REST de gestion de la DSN et exports de données SQL pour reportings métier \textit{(Python)}
+    \item Développement sur le progiciel métier : module de cotisation et échanges EDI \textit{(PowerBuilder)}
   \end{itemize}
   \textit{Stack :} Python, Django, Django REST Framework, C\#, PostgreSQL, DB2, GitLab CI/CD
   }
