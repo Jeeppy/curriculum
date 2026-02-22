@@ -18,7 +18,7 @@ Développeur backend polyvalent avec 15 ans d'expérience dans la conception d'A
 Développement de solutions logicielles pour l'amélioration de la performance énergétique des bâtiments :
 
 - Développement du moteur de simulation thermique
-- Conception d'un modèle énergétique PID en Python (Poetry, ruff, mypy, pytest) déployé via pipeline GitLab CI/CD jusqu'au Package Registry
+- Conception d'un modèle énergétique PID en Python déployé via pipeline GitLab CI/CD jusqu'au package registry
 - Mise en place de prédictions de température pour tous les bâtiments via des jobs Sidekiq asynchrones
 - Intégration de capteurs IoT multi-protocoles (Ethera, Nexelec RISE/AIR/SIGN, Bluesky, Navixis) avec décodage de trames brutes
 - Développement de fonctionnalités métier : notifications par mail, gestion des droits, déclencheurs d'occupation (Mainti4)
@@ -59,19 +59,19 @@ Conception et développement de solutions métier critiques dans le domaine de l
 
 ### 2008 – 2009 · Développeur WinDev — Gid, Douai
 
-Développement de plusieurs applications métier sous WinDev : outil de gestion de parc informatique et logiciel de gestion d'agences immobilières.
+Développement d'applications métier sous WinDev : outil de gestion de parc informatique et logiciel de gestion d'agences immobilières.
 
 ---
 
 ### 2007 · Développeur C++ — Sofintec, Amiens
 
-Conception et développement d'un logiciel éducatif avec contrôle parental en C++ et Qt.
+Conception et développement d'un logiciel éducatif en C++ et Qt.
 
 ---
 
 ### 2006 · Développeur web — Auto-picardie, Amiens
 
-Conception et développement d'un site vitrine de présentation et de vente de véhicules d'occasion.
+Conception et développement d'un site de vente de véhicules d'occasion.
 
 ---
 
